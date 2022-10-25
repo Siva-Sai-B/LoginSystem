@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            SignIn page
+        </title>
+    </head>
+    <body>
+        <h1>Welcome to SignIn Page</h1>
+        {% for message in messages %}
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+<strong> Message:</strong>{{message}}
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+{% endfor %}
+
+        <form action="/signin" method="POST">
+          
+            {% csrf_token %}
+            <label for="username">User Name</label><br>
+            <input type="text" id="username" name="username" placeholder="Enter User Name">
+            <br><br>
+            <label for="pass1">Password</label><br>
+            <input type="text" id="pass1" name="pass1" placeholder="Enter Password">
+            <br><br>
+             <button type="submit"> Sign In </button>
+
+        </form>
+    </body>
+</html>

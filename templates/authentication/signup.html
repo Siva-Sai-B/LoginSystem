@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            SignUp page
+        </title>
+    </head>
+    <body>
+        <h1>Welcome To SignUp Page</h1>
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+        <strong> Message:</strong>{{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        {% endfor %}
+<form action="/signup" method="post">
+    {% csrf_token %}
+    <label for="username" style="font-family:bold; color:blue;">User Name</label><br>
+    <input type="text" id="username" name="username" placeholder="Enter User Name"><br><br>
+    <label for="fname" style="font-family:bold;" >First Name</label><br>
+    <input type="text" id="fname" name="fname" placeholder="Enter First Name"><br><br>
+    <label for="lname" style="font-family:bold;">Last Name</label><br>
+    <input type="text" id="lname" name="lname" placeholder="Enter Last Name"><br><br>
+    <label for="fname" style="font-family:bold;"> Email</label><br>
+    <input type="text" id="email" name="email" placeholder="Enter Email"><br><br>
+    <label for="pass1" style="font-family:bold;">Password</label><br>
+    <input type="text" id="pass1" name="pass1"placeholder="Enter Password"><br><br>
+    <label for="pass1_" style="font-family:bold;">Confirm Password</label><br>
+    <input type="text" id="pass1_" name="pass1_" placeholder="Confirm Password"><br><br>
+    <button type="submit" style="font-family:bold;">Sign Up</button>
+
+</form>
+
+</body>
+</html>
